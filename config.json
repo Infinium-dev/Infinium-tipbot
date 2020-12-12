@@ -1,0 +1,9 @@
+{
+    "DiscordToken":"<your-discord-bot-token>",
+    "rpc_wallet_host":"http://127.0.0.1:27857",
+    "rpc_wallet_normal_delay": 1000,
+    "decimal_places":1000000000000,
+    "fee_per_byte":15,
+    "help_message":"\n:regional_indicator_h: :regional_indicator_e: :regional_indicator_l: :regional_indicator_p: \nThis is infinium tipbot help\n`/generate` - Generates your tipbot account\n`/address`   - Show your tipbot account deposit address\n`/balance`   - Show your tipbot account balance\n`/tip`            - Send money to user `/tip [@user_you_want_to_tip] [amount]`\n`/withdraw` - Withdraw your money to your wallet `/withdraw [wallet address] [amount]`\n`/help`          - Show this help menu\n\n:warning: Disclaimer: We don't recommend storing your infinium in the tipbot, becouse your local wallet is much more secure. So please use tipbot for sending money on discord, but not for long term HODL. We are not responsible for any loss caused by any fault of tipbot! :warning:",
+    "tx_explorer":"https://explorer.infinium.space/tx/#"
+}
