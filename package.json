@@ -1,0 +1,17 @@
+{
+  "name": "infinium-tipbot",
+  "version": "1.0.0",
+  "description": "TipBot for Infinium",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Michiel Mulders",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^11.5.1",
+    "dotenv": "^8.2.0",
+    "fs":"0.0.1-security",
+    "request-json":"0.6.5"
+  }
+}
