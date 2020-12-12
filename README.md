@@ -36,5 +36,6 @@ $> echo -e "<wallet_password>\n" | ./walletd --infiniumd-remote-address=127.0.0.
 ```
 ## and after this you can start the tipbot
 ```
+$tipbot_dir> npm update
 $tipbot_dir> ./bot_loop.sh
 ```
