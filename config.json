@@ -2,8 +2,15 @@
     "DiscordToken":"<your-discord-bot-token>",
     "rpc_wallet_host":"http://127.0.0.1:27857",
     "rpc_wallet_normal_delay": 1000,
+    "rpc_wallet_faucet_delay": 4000,
     "decimal_places":1000000000000,
     "fee_per_byte":15,
     "help_message":"\n:regional_indicator_h: :regional_indicator_e: :regional_indicator_l: :regional_indicator_p: \nThis is infinium tipbot help\n`/generate` - Generates your tipbot account\n`/address`   - Show your tipbot account deposit address\n`/balance`   - Show your tipbot account balance\n`/tip`            - Send money to user `/tip [@user_you_want_to_tip] [amount]`\n`/withdraw` - Withdraw your money to your wallet `/withdraw [wallet address] [amount]`\n`/help`          - Show this help menu\n\n:warning: Disclaimer: We don't recommend storing your infinium in the tipbot, becouse your local wallet is much more secure. So please use tipbot for sending money on discord, but not for long term HODL. We are not responsible for any loss caused by any fault of tipbot! :warning:",
-    "tx_explorer":"https://explorer.infinium.space/tx/#"
+    "tx_explorer":"https://explorer.infinium.space/tx/#",
+    "welcome_dm":"Welcome! We are glad to see you at our Infinium project. An Infinium wallet has been created for you and sent you 100 coins :infinity:\nYou can use the command: `/help` to view all the wallet management commands\nSee the main links of the Infinium project here:\nRead our whitepaper(https://infinium.space/whitepaper.pdf) and you will see for yourself the value of the coins you receive",
+    "welcome_dm_sorry":"Welcome! We are glad to see you at our Infinium project. An Infinium wallet has been created for you. We are sorry, we normally give new users 100 INF as welcome bonus, bot the bot is overloaded today, so please contact 313 or DevJacob in infinium group, they can fix it :infinity:\nYou can use the command: `/help` to view all the wallet management commands\nSee the main links of the Infinium project here:\nRead our whitepaper(https://infinium.space/whitepaper.pdf) and you will see for yourself the value of the coins you receive",
+    "prepaid_addressed":200,
+    "prepaid_input_wallet":"<wallet-from-where-send-coins-to-new-users>",
+    "give_coins_to_new_users":100,
+    "wallet_fill_update_interval":20000
 }
