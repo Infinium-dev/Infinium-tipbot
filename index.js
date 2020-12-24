@@ -31,7 +31,7 @@ bot.on('message', msg => {
   console.log(msg.content);
   if (msg.content.startsWith('/welcome')) {
     if (msg.mentions.users.size) {
-      msg.reply('Yay!');
+      //msg.reply('Yay!');
       msg.delete(500);
       if (file[msg.mentions.users.first()] == null) {
         if (GiveWalletAddress(msg.mentions.users.first())) {
