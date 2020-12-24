@@ -33,14 +33,17 @@ bot.on('message', msg => {
     if (msg.mentions.users.size) {
       //msg.reply('Yay!');
       msg.delete(500);
-      if (file[msg.mentions.users.first()] == null) {
+      var moded_discord_id = msg.mentions.users.first().toString().replace('<', '');
+      moded_discord_id = moded_discord_id.toString().replace('@', '');
+      moded_discord_id = moded_discord_id.toString().replace('>', '');
+      if (file[moded_discord_id] == null) {
         if (GiveWalletAddress(msg.mentions.users.first())) {
           msg.mentions.users.first().send(welcome_dm);
         } else {
           msg.mentions.users.first().send(welcome_dm_s);
         }
       } else {
-        msg.reply('You already have tipbot address generated!');
+        msg.mentions.users.first().send("Welcome back in infinium-8 group. :wave: :infinity: ")
       }
     } else {
       msg.reply('Please tag a valid user!');
@@ -407,13 +410,13 @@ function SendWithdrawal(tiper_boii, withdrawal_address, amount, msg_4_reply) {
 function GiveWalletAddress(discord_id) { //get new wallet address
   var ii_max = config__filejson_parsed.prepaid_addressed,
     is_sucess = false;
+  var mod_discord_id = discord_id.toString().replace('<', '');
+  mod_discord_id = mod_discord_id.toString().replace('@', '');
+  mod_discord_id = mod_discord_id.toString().replace('>', '');
   for (var ii = 0; ii < ii_max; ii++) {
     if (p_file[ii] == false) {
 
     } else {
-      var mod_discord_id = discord_id.toString().replace('<', '');
-      mod_discord_id = mod_discord_id.toString().replace('@', '');
-      mod_discord_id = mod_discord_id.toString().replace('>', '');
       AddFileValue(mod_discord_id, p_file[ii]);
       p_AddFileValue(ii, false);
       ii = ii_max + 1;
@@ -421,6 +424,29 @@ function GiveWalletAddress(discord_id) { //get new wallet address
     }
   }
   if (is_sucess == false) {
+      var client_json_rpc = request_json.createClient(rpc_wallet_host);
+      client_json_rpc.post('/json_rpc', {
+        "jsonrpc": "2.0",
+        "id": "test",
+        "method": "create_addresses",
+        "params": {
+          "secret_spend_keys": ["", ""]
+        }
+      }, function (err, res, body) {
+        if (err == null) {
+          console.log("reading create_addresses from walletd [\x1b[32mOK\x1b[0m]");
+
+          if (body.result.addresses[0]) {
+            console.log(body.result.addresses[0]);
+          }
+          setTimeout(function () {
+            AddFileValue(mod_discord_id, body.result.addresses[0]);
+          }, config__filejson_parsed.rpc_wallet_normal_delay);
+        } else {
+          console.log("reading create_addresses from walletd [\x1b[31mERROR\x1b[0m]");
+          console.log("error");
+        }
+      });
     return false;
   } else {
     return true;
